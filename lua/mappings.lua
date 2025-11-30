@@ -11,7 +11,7 @@ map("i", "jk", "<ESC>")
 
 vim.keymap.set("n", "<C-l>", function()
   require("triforce").show_profile()
-end, { desc = "tampilkan triforce stat" })
+end, { desc = "Display Triforce's stat" })
 
 -- Keyboard users
 vim.keymap.set("n", "<C-t>", function()
@@ -34,19 +34,15 @@ end, {})
 vim.keymap.set("n", "<leader>rr", function()
   vim.cmd "w" -- Save file
 
-  -- Get directory and full path
   local file_dir = vim.fn.expand "%:p:h"
   local file_path = vim.fn.expand "%:p"
 
   require("nvchad.term").runner {
     id = "python_runner",
     pos = "sp",
-    -- The fix: Quote paths to handle spaces, and CD first
     cmd = "cd '" .. file_dir .. "' && python3 '" .. file_path .. "'",
   }
-end, { desc = "Run Python File (Smart CD)" })
-
--- In your mappings.lua
+end, { desc = "Run Python on current directory" })
 
 -- Normal mode mapping for terminal buffer
 vim.keymap.set("t", "<A-h>", function()

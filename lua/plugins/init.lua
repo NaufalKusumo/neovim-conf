@@ -59,6 +59,19 @@ return {
     end,
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "supermaven-inc/supermaven-nvim",
+        opts = {},
+      },
+    },
+    opts = function(_, opts)
+      opts.sources[1].trigger_chars = { "-" }
+      table.insert(opts.sources, 1, { name = "supermaven" })
+    end,
+  },
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 

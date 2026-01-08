@@ -7,3 +7,13 @@
 # Credits
 
 1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+
+# Shortcut
+
+:Telescope persisted = For searching our previous saved sessions
+:Lazy sync
+:TimerlyToggle = Toggle timer 
+
+<alt> + i = Floating terminal
+<alt> + h = terminal
+

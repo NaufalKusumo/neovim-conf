@@ -10,10 +10,10 @@
 
 # Shortcut
 
-:Telescope persisted = For searching our previous saved sessions
-:Lazy sync
-:TimerlyToggle = Toggle timer 
+* :Telescope persisted = For searching our previous saved sessions
+* :Lazy sync
+* :TimerlyToggle = Toggle timer 
 
-<alt> + i = Floating terminal
-<alt> + h = terminal
+* <alt> + i = Floating terminal
+* <alt> + h = terminal
 

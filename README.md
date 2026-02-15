@@ -14,6 +14,6 @@
 * :Lazy sync
 * :TimerlyToggle = Toggle timer 
 
-* <alt> + i = Floating terminal
-* <alt> + h = terminal
+* alt + i = Floating terminal
+* alt + h = terminal
 

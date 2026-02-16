@@ -7,9 +7,10 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+map("n", "<leader>fp", "<cmd> Telescope persisted <CR>", { desc = "Find Projects" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
-vim.keymap.set("n", "<C-l>", function()
+vim.keymap.set("n", "<leader>ts", function()
   require("triforce").show_profile()
 end, { desc = "Display Triforce's stat" })
 

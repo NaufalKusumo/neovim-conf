@@ -3,7 +3,7 @@ local defaults = configs.defaults()
 local lspconfig = require "lspconfig"
 
 -- 1. Remove "pylsp" from this list
-local servers = { "html", "cssls" }
+local servers = { "html", "cssls", "ts_ls" }
 
 -- 2. Setup standard servers with default config
 for _, lsp in ipairs(servers) do

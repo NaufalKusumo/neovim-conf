@@ -9,7 +9,7 @@ local M = {}
 -- })
 
 M.base46 = {
-  theme = "material-darker",
+  theme = "gruvbox",
 
   -- hl_override = {
   -- 	Comment = { italic = true },
@@ -18,7 +18,7 @@ M.base46 = {
 }
 
 M.nvdash = {
-  load_on_startup = true,
+  load_on_startup = false,
   header = {
     "                        _____       .__     __                                      ",
     "    ____ _____   __ ___/ ____\\____  |  |   |  | ____ __  ________ __  _____   ____  ",

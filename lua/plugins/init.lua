@@ -59,19 +59,32 @@ return {
     end,
   },
 
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   dependencies = {
-  --     {
-  --       "supermaven-inc/supermaven-nvim",
-  --       opts = {},
-  --     },
-  --   },
-  --   opts = function(_, opts)
-  --     opts.sources[1].trigger_chars = { "-" }
-  --     table.insert(opts.sources, 1, { name = "supermaven" })
-  --   end,
-  -- },
+  {
+    "folke/snacks.nvim",
+    lazy = false,
+    opts = {
+      dashboard = require "configs.snacks.dashboard",
+    },
+    configs = function(_, opts)
+      local snacks = require "snacks"
+      snacks.setup(opts)
+      snacks.dashboard.setup()
+    end,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "supermaven-inc/supermaven-nvim",
+        opts = {},
+      },
+    },
+    opts = function(_, opts)
+      opts.sources[1].trigger_chars = { "-" }
+      table.insert(opts.sources, 1, { name = "supermaven" })
+    end,
+  },
 
   {
     "kdheepak/lazygit.nvim",

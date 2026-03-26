@@ -3,8 +3,10 @@ local defaults = configs.defaults()
 local lspconfig = require "lspconfig"
 
 -- 1. Remove "pylsp" from this list
-local servers = { "html", "cssls", "ts_ls" }
-
+local servers = { "html", "cssls", "vtsls", "pyright" }
+-- Just in case if you want to change from pyright, use pylsp
+--
+local servers = { "pyright" }
 -- 2. Setup standard servers with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

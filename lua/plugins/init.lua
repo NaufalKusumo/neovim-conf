@@ -77,10 +77,27 @@ return {
     dependencies = {
       {
         "supermaven-inc/supermaven-nvim",
-        opts = {},
+        opts = {
+          keymaps = {
+            accept_suggestion = "<C-f>",
+            clear_suggestion = "<C-e>",
+            accept_word = nil,
+          },
+        },
       },
     },
+
     opts = function(_, opts)
+      local cmp = require("cmp")
+
+      opts.mapping = cmp.mapping.preset.insert({
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
+
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-e>"] = cmp.mapping.abort(),
+      })
+
       opts.sources[1].trigger_chars = { "-" }
       table.insert(opts.sources, 1, { name = "supermaven" })
     end,

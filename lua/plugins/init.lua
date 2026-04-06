@@ -72,36 +72,25 @@ return {
     end,
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "supermaven-inc/supermaven-nvim",
-        opts = {
-          keymaps = {
-            accept_suggestion = "<C-f>",
-            clear_suggestion = "<C-e>",
-            accept_word = nil,
-          },
-        },
-      },
-    },
-
-    opts = function(_, opts)
-      local cmp = require("cmp")
-
-      opts.mapping = cmp.mapping.preset.insert({
-        ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-
-        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-        ["<C-e>"] = cmp.mapping.abort(),
-      })
-
-      opts.sources[1].trigger_chars = { "-" }
-      table.insert(opts.sources, 1, { name = "supermaven" })
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = {
+  --     {
+  --       "supermaven-inc/supermaven-nvim",
+  --       opts = {
+  --         keymaps = {
+  --           accept_suggestion = "<C-f>",
+  --           clear_suggestion = "<C-e>",
+  --           accept_word = nil,
+  --         },
+  --       },
+  --     },
+  --   },
+  --
+  --   opts = function(_, opts)
+  --     opts.sources[1].trigger_chars = { "-" }
+  --   end,
+  -- },
 
   {
     "kdheepak/lazygit.nvim",
@@ -129,8 +118,8 @@ return {
     cmd = "Gemini",
     -- Example key mappings for common actions:
     keys = {
-      { "<leader>a/", "<cmd>Gemini toggle<cr>", desc = "Toggle Gemini CLI" },
-      { "<leader>aa", "<cmd>Gemini ask<cr>", desc = "Ask Gemini", mode = { "n", "v" } },
+      { "<leader>a/", "<cmd>Gemini toggle<cr>",   desc = "Toggle Gemini CLI" },
+      { "<leader>aa", "<cmd>Gemini ask<cr>",      desc = "Ask Gemini",       mode = { "n", "v" } },
       { "<leader>af", "<cmd>Gemini add_file<cr>", desc = "Add File" },
     },
     dependencies = {
@@ -143,23 +132,27 @@ return {
     dependencies = {
       { "nvim-telescope/telescope.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim" } }, -- optional: you can also use fzf-lua, snacks, mini-pick instead.
     },
-    ft = "python", -- Load when opening Python files
-    keys = { { ",v", "<cmd>VenvSelect<cr>" } }, -- Open picker on keymap
+    ft = "python",                                                                                    -- Load when opening Python files
+    keys = { { ",v", "<cmd>VenvSelect<cr>" } },                                                       -- Open picker on keymap
     opts = {
-      options = {}, -- plugin-wide options
-      search = {}   -- custom search definitions
+      options = {},                                                                                   -- plugin-wide options
+      search = {}                                                                                     -- custom search definitions
     },
-  }
+  },
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim", "lua", "vimdoc",
+        "html", "css", "javascript", "typescript", "python",
+      },
+      highlight = {
+        enable = true,
+        use_languagetree = true,
+      },
+    },
+  },
 }
